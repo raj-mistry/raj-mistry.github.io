@@ -1,3 +1,10 @@
+var planegeometry = new THREE.PlaneGeometry(5, 20, 32);
+var planematerial = new THREE.MeshBasicMaterial({
+  color: 0xffff00,
+  side: THREE.DoubleSide,
+});
+var plane = new THREE.Mesh(planegeometry, planematerial);
+
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(
   75,
@@ -27,10 +34,10 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 var geometry = new THREE.BoxGeometry();
-var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+var material = new THREE.MeshBasicMaterial({ color: 0x00ffff });
 var cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
-
+scene.add(plane);
 camera.position.z = 5;
 
 const z = camera.position.z;
@@ -45,13 +52,12 @@ window.addEventListener("resize", function () {
 });
 
 window.addEventListener("click", function () {
-  alert("yo");
   let amount =
     x + (10 * (cursorX - 0.5 * window.innerWidth)) / window.innerWidth;
   if (cube.position.x > amount - 0.5 && cube.position.x < amount + 0.5) {
-    alert("deleted");
+    cube.material.color.setHex(0xff00ff); //if cube is clicked
   } else {
-    alert("failed");
+    cube.material.color.setHex(0x0000ff);
   }
 });
 
