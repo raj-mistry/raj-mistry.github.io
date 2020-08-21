@@ -70,3 +70,16 @@ body {
   text-align: center;
   position: fixed;
 }
+img {
+  max-width: 100%;
+  max-height: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-container2 {
+  display: grid;
+}
