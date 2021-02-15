@@ -1,81 +1,92 @@
 <html>
-  <head>
-    <meta name="viewport" content="initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+
+<head>
+    <title>Parallax</title>
+
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 200px;
+            color: black;
+        }
+        
+        .parallax {
+            /* The image used */
+            background-image: url('bg.jpg');
+            /* Full height */
+            height: 100%;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
-    <title> </title>
+
+    <link rel="stylesheet" href="website.css">
 
     <script>
-      /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-      }
+        var image = document.getElementById("animation");
+        var imgsrc = 0
 
-      /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-      }
-
-      function reportWindowSize() {
-        document.getElementById("bghome").width = window.innerWidth;
-        document.getElementById("bghome").height =
-          window.innerWidth * (1440 / 2560);
-      }
-      window.addEventListener("resize", reportWindowSize);
+        function newurl(source) {
+            var image = document.getElementById("animation");
+            image.src = source;
+        }
     </script>
+</head>
 
-    <script>
-      window.addEventListener("click", function () {
-        document.getElementById("homeText").style.color = Math.floor(
-          Math.random() * 16777215
-        ).toString(16);
-      });
-    </script>
-  </head>
+<body>
 
-  <body>
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
-      >
-      <a href="index.html">Home</a>
-      <a href="2dportfolio.html">2D Portfolio</a>
-      <a href="animations.html">Animations</a>
-      <a href="#">Contact</a>
+    <div class="parallax">
+        <h1>Hello.</h1>
+        <h3 style="font-size:50px; color: cyan">I'm</h3>
+        <h3 style="font-size:50px; color: cyan">Raj Mistry</h3>
+    </div>
+    <div class="parallax">
+        <div style="width:100%;">
+            <div class="flex-container2 scrollbar" id="style-2">
+                <div class="flex-container scrollbar" id="style-2">
+                    <div><img src="1.GIF" id="imgscroll" onclick="newurl(this.src)"></div>
+                    <div><img src="2.gif" id="imgscroll" onclick="newurl(this.src)"></div>
+                    <div><img src="3.gif" id="imgscroll" onclick="newurl(this.src)"></div>
+                    <div><img src="4.gif" id="imgscroll" onclick="newurl(this.src)"></div>
+                    <div><img src="5.gif" id="imgscroll" onclick="newurl(this.src)"></div>
+                    <div><img src="6.gif" id="imgscroll" onclick="newurl(this.src)"></div>
+                    <div><img src="7.gif" id="imgscroll" onclick="newurl(this.src)"></div>
+                    <div><img src="1.png" id="imgscroll" onclick="newurl(this.src)"></div>
+                    <div><img src="2.png" id="imgscroll" onclick="newurl(this.src)"></div>
+                    <div><img src="3.png" id="imgscroll" onclick="newurl(this.src)"></div>
+                </div>
+                <div style="width:100%; margin:auto;"><img src="1.png" id="animation"></div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div style="position:absolute;">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.js"></script>
+            <script src="three.js" id="text"></script>
+            <script src="main.js"></script>
+        </div>
+        <div style="position: sticky; background: cyan;">
+            <h3 style="">Click for some fun</h3>
+        </div>
+    </div>
+    <div class="parallax">
+        <h3>This website is still under construction</h3>
     </div>
 
-    <!-- Use any element to open the sidenav -->
-    <span onclick="openNav()"
-      ><h1
-        id="openicon"
-        style="font-family: 'Do Hyeon', sans-serif; font-size: 50px;"
-      >
-        ≡
-      </h1></span
-    >
 
-    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-    <div id="main">
-      <div>
+    <div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.js"></script>
-        <script src="ThreeJS/js/three.js" id="text"></script>
-        <script src="ThreeJS/main.js"></script>
-      </div>
-      <div id="homeText">
-        <h1 style="color: 0xff00ff;">
-          Raj Mistry
-        </h1>
-        <h1 style="color: 0xffff00;">
-          Developer +
-        </h1>
-        <h1 style="color: 0x00ffff;">
-          Animator
-        </h1>
-      </div>
+        <script src="three.js" id="text"></script>
+        <script src="main.js"></script>
     </div>
-  </body>
+
+    <div>
+    </div>
+</body>
+
+
+
 </html>
